@@ -241,15 +241,9 @@ INSERT INTO test_b(id) VALUES
 (30),
 (50);
 
-SELECT * FROM test_a;
-SELECT * FROM test_b;
-
 
 -- Напишите запрос, который вернет строки из таблицы 
 -- test_a, id которых нет в таблице test_b, НЕ используя ключевого слова NOT.
-
-SELECT a.id, a.data, b.id as sec FROM test_a a
-left JOIN test_b b ON a.id = b.id;
 
 select id from (SELECT a.id, a.data, b.id as sec FROM test_a a
 left JOIN test_b b ON a.id = b.id) as c
